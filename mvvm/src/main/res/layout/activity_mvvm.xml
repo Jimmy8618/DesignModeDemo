@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModle"
+            type="com.jimmy.mvvm.viewmodel.VModel" />
+        <!--<variable-->
+            <!--name="activity"-->
+            <!--type="com.jimmy.mvvm.MVVMActivity" />-->
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".MVVMActivity">
+
+        <EditText
+            android:id="@+id/et_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@={viewModle.userInput}"/>
+
+        <Button
+            android:id="@+id/bt_submit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{viewModle.getData}"
+            android:text="提交" />
+
+        <TextView
+            android:id="@+id/tv_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{viewModle.result}"
+            tools:text="账号|等级"/>
+
+    </LinearLayout>
+</layout>
